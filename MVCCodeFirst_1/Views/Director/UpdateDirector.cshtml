@@ -1,0 +1,30 @@
+﻿@model DirectorVM
+
+@{
+    ViewBag.Title = "UpdateDirector";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=>x.Director.ID)
+
+
+    <div>
+        @Html.TextBoxFor(x => x.Director.FirstName)
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(x => x.Director.LastName)
+    </div>
+
+
+
+    <div>
+        <button class="btn btn-success">
+            Güncelle
+        </button>
+    </div>
+}
+
+

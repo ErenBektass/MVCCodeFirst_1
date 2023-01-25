@@ -1,0 +1,33 @@
+﻿@model DirectorVM
+
+
+@{
+    ViewBag.Title = "ListDirectors";
+}
+
+
+Yeni yönetmen eklemek icin @Html.ActionLink("tıklayınız","AddDirector")
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>İsim</th>
+            <th>Soyisim</th>
+            <th colspan="2" style="padding-left:220px">Islemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Director item in Model.Directors)
+        {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@Html.ActionLink("Güncelle", "UpdateDirector", "Director", new { id = item.ID }, new { @class = "btn btn-warning" })</td>
+            <td>@Html.ActionLink("Sil", "DeleteDirector", "Director", new { id = item.ID }, new { @class = "btn btn-danger" })</td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,26 @@
+﻿@model DirectorVM
+
+@{
+    ViewBag.Title = "AddDirector";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(x => x.Director.FirstName, new { placeholder = "İsim giriniz" })
+    </div>
+    <br />
+
+    <div>
+        @Html.TextBoxFor(x => x.Director.LastName, new { placeholder = "Soyisim giriniz" })
+    </div>
+
+
+
+    <div>
+       <button class="btn btn-success">
+           Ekle
+       </button>
+    </div>
+}
+
